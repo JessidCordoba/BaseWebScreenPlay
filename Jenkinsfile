@@ -140,8 +140,7 @@ pipeline {
                             {
                                "key": "''' + projectKey + '''"
                             },
-                            "summary": "'''+titulo+''+buildNumber+'''",
-                            
+                            "summary": "'''+titulo+''+buildNumber+'''",                            
                             "issuetype":
                             {
                                 "id": "''' + testExecutionFieldId + '''"

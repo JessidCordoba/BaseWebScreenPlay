@@ -1,6 +1,6 @@
 #Autor: Jessid Cordoba
 #language: en
-@UserStory @XRAY-1
+@UserStory @XRAYJ-1
 Feature: Login
   I as a user of the application
   I want to access the application with my username and password
