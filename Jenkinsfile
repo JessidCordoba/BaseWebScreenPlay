@@ -29,20 +29,18 @@ pipeline {
                     [credentialsId: credenciales, url: urlRepo]]])
             }
         }
-/*
-        stage('SonarQube analysis')
-                {
-                    steps {
-                        script {    
-                            scannerHome = tool 'SonarQubeScanner'
-                            //mismo nombre del servidor configurado en las Global Tools Jenkins
-                        }
-                        withSonarQubeEnv('sonarQube')//mismo nombre del servidor configurado en la configuracion del sistema jenkins
-                                {
-                                    bat 'sonar-scanner'
-                                }
-                    }
-                }
+
+        stage('SonarQube analysis'){
+            steps {
+               script {
+                        scannerHome = tool 'SonarQubeScanner'//mismo nombre del servidor configurado en las Global Tools Jenkins
+               }
+               withSonarQubeEnv('sonarQube')//mismo nombre del servidor configurado en la configuracion del sistema jenkins
+               {
+                  bat 'sonar-scanner'
+               }
+            }
+        }
 
         stage("Quality Gate") {
             steps {
@@ -59,7 +57,7 @@ pipeline {
                 }
             }
         }
-*/
+
         stage('Ejecutar Pruebas') {
             steps {
                 script {
