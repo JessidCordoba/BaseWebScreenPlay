@@ -141,8 +141,6 @@ pipeline {
                                "key": "''' + projectKey + '''"
                             },
                             "summary": "'''+titulo+''+buildNumber+'''",
-                            "description": "'''+description+'''",
-                            "labels":'''+labels+''',
                             "issuetype":
                             {
                                 "id": "''' + testExecutionFieldId + '''"
