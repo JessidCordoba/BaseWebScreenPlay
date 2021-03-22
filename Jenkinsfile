@@ -146,7 +146,10 @@ pipeline {
                             },
                             "summary": "'''+titulo+''+buildNumber+'''",  
                             "description": "'''+description+'''",
-                            "labels":"'''+labels+'''"   
+                            "''' + typeEnvironmentField + '''":
+                            {
+                                "''' + environment + '''"
+                            } 
                         }
                     }'''
                     echo info
