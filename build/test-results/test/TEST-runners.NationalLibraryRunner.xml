@@ -1,63 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="runners.NationalLibraryRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="DESKTOP-CAJN6H9" time="0.0">
+<testsuite name="runners.NationalLibraryRunner" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-03-22T03:45:21" hostname="DESKTOP-CAJN6H9" time="0.006">
   <properties/>
-  <system-out><![CDATA[@UserStory
-Feature: Login
-  I as a user of the application
-  I want to access the application with my username and password
-  To make a purchase
-
-  Scenario Outline: Purchase a book ?[90m# src/test/resources/features/NationalLibray.feature:16?[0m
-    ?[36mWhen he searches a book?[0m
-    ?[36mThen he finds this book?[0m
-    ?[36mAnd he closes the session?[0m
-
-    Examples: 
-
-  Background: Successful login                           ?[90m# src/test/resources/features/NationalLibray.feature:8?[0m
-
-1 Scenarios (?[32m1 passed?[0m)
-6 Steps (?[32m6 passed?[0m)
-0m35,186s
-
-]]></system-out>
-  <system-err><![CDATA[[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - 
-
--------------------------------------------------------------------------------------
-     _______. _______ .______       _______ .__   __.  __  .___________.____    ____ 
-    /       ||   ____||   _  \     |   ____||  \ |  | |  | |           |\   \  /   / 
-   |   (----`|  |__   |  |_)  |    |  |__   |   \|  | |  | `---|  |----` \   \/   /  
-    \   \    |   __|  |      /     |   __|  |  . `  | |  |     |  |       \_    _/   
-.----)   |   |  |____ |  |\  \----.|  |____ |  |\   | |  |     |  |         |  |     
-|_______/    |_______|| _| `._____||_______||__| \__| |__|     |__|         |__|    
-                                                                                     
- News and tutorials at http://www.serenity-bdd.info                                  
- Documentation at https://wakaleo.gitbooks.io/the-serenity-book/content/             
- Join the Serenity Community on Rocket Chat at https://serenity-bdd.rocket.chat      
- Serenity BDD Support and Training at http://serenity-bdd.info/#/trainingandsupport  
- Learn Serenity BDD online at http://serenity-dojo.com                               
--------------------------------------------------------------------------------------
-
-[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - Test Suite Started: Login
-[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - 
- _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
-|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
-  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
-  | | | |___ ___) || |    ___) || |/ ___ \|  _ < | | | |___| |_| |
-  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
-                                                                  
-
-TEST STARTED: Purchase a book
--------------------------------------------------------------------(login;purchase-a-book)
-[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - 
-        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
-  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
- (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
-  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
- (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
-        /_/                                                                
-
-TEST PASSED: Purchase a book
-----------------------------------------------------------------------------
-]]></system-err>
+  <testcase name="initializationError" classname="runners.NationalLibraryRunner" time="0.006">
+    <failure message="cucumber.runtime.CucumberException: gherkin.ParserException$CompositeParserException: Parser errors:&#10;(10:3): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Background: Successful login'&#10;(11:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Given that the User want do login in the application'&#10;(12:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'When he enter credentials'&#10;(13:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| User | Password |'&#10;(14:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| prueba1701@gmail.com | 123456789 |'&#10;(15:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Then he must access the homepage'&#10;(16:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '|Answer|'&#10;(17:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| TRUE |'" type="cucumber.runtime.CucumberException">cucumber.runtime.CucumberException: gherkin.ParserException$CompositeParserException: Parser errors:
+(10:3): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Background: Successful login'
+(11:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Given that the User want do login in the application'
+(12:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'When he enter credentials'
+(13:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| User | Password |'
+(14:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| prueba1701@gmail.com | 123456789 |'
+(15:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Then he must access the homepage'
+(16:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '|Answer|'
+(17:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| TRUE |'
+	at cucumber.runtime.FeatureBuilder.parse(FeatureBuilder.java:60)
+	at cucumber.runtime.model.CucumberFeature.loadFromFeaturePath(CucumberFeature.java:113)
+	at cucumber.runtime.model.CucumberFeature.load(CucumberFeature.java:49)
+	at cucumber.runtime.model.CucumberFeature.load(CucumberFeature.java:31)
+	at cucumber.runtime.RuntimeOptions.cucumberFeatures(RuntimeOptions.java:311)
+	at cucumber.api.junit.Cucumber.&lt;init&gt;(Cucumber.java:80)
+	at net.serenitybdd.cucumber.CucumberWithSerenity.&lt;init&gt;(CucumberWithSerenity.java:38)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:37)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.requests.ClassRequest.createRunner(ClassRequest.java:28)
+	at org.junit.internal.requests.MemoizingRequest.getRunner(MemoizingRequest.java:19)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:78)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: gherkin.ParserException$CompositeParserException: Parser errors:
+(10:3): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Background: Successful login'
+(11:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Given that the User want do login in the application'
+(12:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'When he enter credentials'
+(13:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| User | Password |'
+(14:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| prueba1701@gmail.com | 123456789 |'
+(15:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Then he must access the homepage'
+(16:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '|Answer|'
+(17:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| TRUE |'
+	at gherkin.Parser.parse(Parser.java:143)
+	at gherkin.Parser.parse(Parser.java:118)
+	at gherkin.Parser.parse(Parser.java:114)
+	at cucumber.runtime.FeatureBuilder.parse(FeatureBuilder.java:56)
+	... 47 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>

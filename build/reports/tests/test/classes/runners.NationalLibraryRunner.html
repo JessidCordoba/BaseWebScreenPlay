@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">-</div>
+<div class="counter">0.006s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">-</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,16 +61,94 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
-</li>
-<li>
-<a href="#tab2">Standard error</a>
+<a href="#tab1">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="initializationError"></a>
+<h3 class="failures">initializationError</h3>
+<span class="code">
+<pre>cucumber.runtime.CucumberException: gherkin.ParserException$CompositeParserException: Parser errors:
+(10:3): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Background: Successful login'
+(11:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Given that the User want do login in the application'
+(12:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'When he enter credentials'
+(13:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| User | Password |'
+(14:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| prueba1701@gmail.com | 123456789 |'
+(15:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Then he must access the homepage'
+(16:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '|Answer|'
+(17:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| TRUE |'
+	at cucumber.runtime.FeatureBuilder.parse(FeatureBuilder.java:60)
+	at cucumber.runtime.model.CucumberFeature.loadFromFeaturePath(CucumberFeature.java:113)
+	at cucumber.runtime.model.CucumberFeature.load(CucumberFeature.java:49)
+	at cucumber.runtime.model.CucumberFeature.load(CucumberFeature.java:31)
+	at cucumber.runtime.RuntimeOptions.cucumberFeatures(RuntimeOptions.java:311)
+	at cucumber.api.junit.Cucumber.&lt;init&gt;(Cucumber.java:80)
+	at net.serenitybdd.cucumber.CucumberWithSerenity.&lt;init&gt;(CucumberWithSerenity.java:38)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:37)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.requests.ClassRequest.createRunner(ClassRequest.java:28)
+	at org.junit.internal.requests.MemoizingRequest.getRunner(MemoizingRequest.java:19)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:78)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: gherkin.ParserException$CompositeParserException: Parser errors:
+(10:3): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Background: Successful login'
+(11:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Given that the User want do login in the application'
+(12:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'When he enter credentials'
+(13:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| User | Password |'
+(14:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| prueba1701@gmail.com | 123456789 |'
+(15:5): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got 'Then he must access the homepage'
+(16:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '|Answer|'
+(17:7): expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got '| TRUE |'
+	at gherkin.Parser.parse(Parser.java:143)
+	at gherkin.Parser.parse(Parser.java:118)
+	at gherkin.Parser.parse(Parser.java:114)
+	at cucumber.runtime.FeatureBuilder.parse(FeatureBuilder.java:56)
+	... 47 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -80,76 +158,12 @@
 <th>Result</th>
 </tr>
 </thead>
+<tr>
+<td class="failures">initializationError</td>
+<td class="failures">0.006s</td>
+<td class="failures">failed</td>
+</tr>
 </table>
-</div>
-<div id="tab1" class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre>@UserStory
-Feature: Login
-  I as a user of the application
-  I want to access the application with my username and password
-  To make a purchase
-
-  Scenario Outline: Purchase a book ?[90m# src/test/resources/features/NationalLibray.feature:16?[0m
-    ?[36mWhen he searches a book?[0m
-    ?[36mThen he finds this book?[0m
-    ?[36mAnd he closes the session?[0m
-
-    Examples: 
-
-  Background: Successful login                           ?[90m# src/test/resources/features/NationalLibray.feature:8?[0m
-
-1 Scenarios (?[32m1 passed?[0m)
-6 Steps (?[32m6 passed?[0m)
-0m35,186s
-
-</pre>
-</span>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - 
-
--------------------------------------------------------------------------------------
-     _______. _______ .______       _______ .__   __.  __  .___________.____    ____ 
-    /       ||   ____||   _  \     |   ____||  \ |  | |  | |           |\   \  /   / 
-   |   (----`|  |__   |  |_)  |    |  |__   |   \|  | |  | `---|  |----` \   \/   /  
-    \   \    |   __|  |      /     |   __|  |  . `  | |  |     |  |       \_    _/   
-.----)   |   |  |____ |  |\  \----.|  |____ |  |\   | |  |     |  |         |  |     
-|_______/    |_______|| _| `._____||_______||__| \__| |__|     |__|         |__|    
-                                                                                     
- News and tutorials at http://www.serenity-bdd.info                                  
- Documentation at https://wakaleo.gitbooks.io/the-serenity-book/content/             
- Join the Serenity Community on Rocket Chat at https://serenity-bdd.rocket.chat      
- Serenity BDD Support and Training at http://serenity-bdd.info/#/trainingandsupport  
- Learn Serenity BDD online at http://serenity-dojo.com                               
--------------------------------------------------------------------------------------
-
-[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - Test Suite Started: Login
-[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - 
- _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
-|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
-  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
-  | | | |___ ___) || |    ___) || |/ ___ \|  _ &lt; | | | |___| |_| |
-  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
-                                                                  
-
-TEST STARTED: Purchase a book
--------------------------------------------------------------------(login;purchase-a-book)
-[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - 
-        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
-  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
- (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
-  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
- (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
-        /_/                                                                
-
-TEST PASSED: Purchase a book
-----------------------------------------------------------------------------
-</pre>
-</span>
 </div>
 </div>
 <div id="footer">
@@ -159,7 +173,7 @@ TEST PASSED: Purchase a book
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8.3</a> at 21/03/2021, 6:47:22 p. m.</p>
+<a href="http://www.gradle.org">Gradle 6.1.1</a> at 21/03/2021, 10:45:21 p. m.</p>
 </div>
 </div>
 </body>
