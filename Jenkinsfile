@@ -5,7 +5,7 @@ def dateFormat = new SimpleDateFormat("yyyyMMddHHmm")
 def date = new Date()
 def timestamp = dateFormat.format(date).toString()
 def CORREOS = "jesid53@gmail.com"
-def urlRepo="https://github.com/JessidCordoba/pruebaxrayjenkins.git"
+def urlRepo="https://github.com/JessidCordoba/BaseWebScreenPlay.git"
 def rama="master"
 def credenciales="GithubJessid"
 
