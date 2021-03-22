@@ -141,13 +141,10 @@ pipeline {
                                "key": "''' + projectKey + '''"
                             },
                             "summary": "'''+titulo+''+buildNumber+'''",
+                            
                             "issuetype":
                             {
                                 "id": "''' + testExecutionFieldId + '''"
-                            },
-                            "''' + typeEnvironmentField + '''":
-                            {
-                               "''' + environment + '''"
                             }
                         }
                     }'''
