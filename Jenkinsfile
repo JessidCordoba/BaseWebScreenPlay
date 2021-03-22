@@ -123,8 +123,8 @@ pipeline {
         stage('Importar resultados en XRAY'){
             steps{
                 script{
-                    def titulo=${TITULO_ISSUE}
-                    def description = ${DESCRIPTION_ISSUE}
+                    def titulo="${TITULO_ISSUE}"
+                    def description = "${DESCRIPTION_ISSUE}"
                     def buildNumber="[BUILD_NUMBER|${BUILD_NUMBER}]"
                     def labels = '["regression","automated_regression"]'
                     def environment = "Production"
