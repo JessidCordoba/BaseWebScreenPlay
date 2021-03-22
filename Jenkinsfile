@@ -16,10 +16,10 @@ pipeline {
                 {
                     steps
                             {
-                                env.WORKSPACE_LOCAL = bat(returnStdout: true, script: 'pwd').trim()
-                                env.BUILD_TIME = bat(returnStdout: true, script: 'date +/F-/T').trim()
-                                echo "Workspace set to:" + env.WORKSPACE_LOCAL
-                                echo "Build time:" + env.BUILD_TIME
+                                $WORKSPACE_LOCAL = bat(returnStdout: true, script: 'pwd').trim()
+                                $BUILD_TIME = bat(returnStdout: true, script: 'date +/F-/T').trim()
+                                echo "Workspace set to:" + $WORKSPACE_LOCAL
+                                echo "Build time:" + $BUILD_TIME
                             }
                 }
         stage('Obtener Fuentes')
@@ -123,7 +123,7 @@ pipeline {
         stage('Importar resultados en XRAY'){
             steps{
                 script{
-                    def titulo={TITULO_ISSUE}
+                    def titulo=${TITULO_ISSUE}
                     def description = ${DESCRIPTION_ISSUE}
                     def buildNumber="[BUILD_NUMBER|${BUILD_NUMBER}]"
                     def labels = '["regression","automated_regression"]'
