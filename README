@@ -1,0 +1,23 @@
+#Jessid Cordoba
+
+Se crearon 8 paquetes en test/java
+Paquete Models:Contiene las clases POJO que encapsulan los datos de pruebas para que se puedan utilizar desde cualquier parte del código
+    BookData: contiene los datos del libro
+    Constantes: contiene el nombre del actor y mensaje de bienvenida
+    UserData: contiene los datos del usuario
+Paquete Questions:
+    Answer: Validación de login exitoso
+    Book: Validación de busqueda exitosa
+Paquete Tasks:
+    OpenUp: Tarea para abrir el sitio web
+    Login: Tarea para autenticarse en el sitio web
+    Search: Tarea para realizar la busqueda en el sitio web
+    Close: Tarea para finalizar la sesión
+Paquete UserInterface:Contiene los objetos de cada una de las pantallas que hacen parte del sitio web.
+Paquete Runners: Contiene el runner que ejecuta el escenario de prueba
+Paquete Stepsdefinitions: Contiene las definiciones del background y del escenario de prueba
+Paquete Drivers: Contiene el driver de chrome para levantar la ejecución
+Paquete Features: Contiene la feature para escribir la historia en lenguaje Gherkin.
+
+Target: contiene el reporte de serenity para las evidencias del proyecto.
+

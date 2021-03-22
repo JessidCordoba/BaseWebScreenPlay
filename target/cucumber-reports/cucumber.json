@@ -1,0 +1,169 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "line": 8,
+        "name": "Successful login",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 15512187300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "that the User want do login in the application",
+            "match": {
+              "location": "LoginDefinitions.thatTheUserWantDoLoginInTheApplication()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6285936200,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "he enter credentials",
+            "match": {
+              "location": "LoginDefinitions.heEnterCredentials(UserData\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "User",
+                  "Password"
+                ]
+              },
+              {
+                "cells": [
+                  "prueba1701@gmail.com",
+                  "123456789"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1471991700,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "he must access the homepage",
+            "match": {
+              "location": "LoginDefinitions.heMustAccessTheHomepage(UserData\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Answer"
+                ]
+              },
+              {
+                "cells": [
+                  "TRUE"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 144363000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginDefinitions.setStage()"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "Purchase a book",
+        "description": "",
+        "id": "login;purchase-a-book;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3095614300,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "he searches a book",
+            "match": {
+              "location": "SearchDefinitions.heSearchesABook(BookData\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "NIKOLA TESLA EL SENOR DEL MUNDO"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1642288000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "he finds this book",
+            "match": {
+              "location": "SearchDefinitions.heFindsThisBook(BookData\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "NIKOLA TESLA EL SENOR DEL MUNDO"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1628346300,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "he closes the session",
+            "match": {
+              "location": "SearchDefinitions.heClosesTheSession()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UserStory"
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "  I as a user of the application\n  I want to access the application with my username and password\n  To make a purchase",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/NationalLibray.feature",
+    "tags": [
+      {
+        "name": "@UserStory",
+        "type": "Tag",
+        "location": {
+          "line": 3,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
