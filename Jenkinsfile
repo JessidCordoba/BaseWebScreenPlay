@@ -130,7 +130,7 @@ pipeline {
                     def environment = "Production"
                     def testExecutionFieldId = 10008
                     def typeEnvironmentField="customfield_10040"
-                    def projectKey = "XIJ"
+                    def projectKey = "XRAYJ"
                     def xrayConnectorId = 'f0366223-b684-491f-bf0b-f43958eeb4aa'
                     def info =
                     '''{
@@ -138,7 +138,7 @@ pipeline {
                         {
                             "project":
                             {
-                                            "key": "''' + projectKey + '''"
+                               "key": "''' + projectKey + '''"
                             },
                             "summary": "'''+titulo+''+buildNumber+'''",
                             "description": "'''+description+'''",
@@ -154,7 +154,7 @@ pipeline {
                         }
                     }'''
                     echo info
-                    step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: 'target/cucumber-reports/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+                    step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: 'serenity_${timestamp}/cucumber-reports/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
                 }
             }
         }
