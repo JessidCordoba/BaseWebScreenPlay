@@ -12,26 +12,23 @@ def credenciales="GithubJessid"
 pipeline {
     agent any
     stages {
-        /*stage('Preparar Workspace')
-                {
-                    steps
-                            {
-                                $WORKSPACE_LOCAL = bat(returnStdout: true, script: 'pwd').trim()
-                                $BUILD_TIME = bat(returnStdout: true, script: 'date +/F-/T').trim()
-                                echo "Workspace set to:" + $WORKSPACE_LOCAL
-                                echo "Build time:" + $BUILD_TIME
-                            }
-                }*/
-        stage('Obtener Fuentes')
-                {
-                    steps
-                            {
-                                checkout([$class: 'GitSCM', branches: [[name: rama]],
-                                          wdoGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
-                                        [credentialsId: credenciales, url: urlRepo]
-                                ]])
-                            }
+        stage('Preparar Workspace'){
+            steps{
+                script{
+                    env.WORKSPACE_LOCAL = bat(returnStdout: true, script: 'pwd').trim()
+                    env.BUILD_TIME = bat(returnStdout: true, script: 'date +/F-/T').trim()
+                    echo "Workspace set to:" + env.WORKSPACE_LOCAL
+                    echo "Build time:" + env.BUILD_TIME
                 }
+            }
+        }
+        stage('Obtener Fuentes'){
+            steps {
+                    checkout([$class: 'GitSCM', branches: [[name: rama]],
+                    wdoGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
+                    [credentialsId: credenciales, url: urlRepo]]])
+            }
+        }
 /*
         stage('SonarQube analysis')
                 {
@@ -69,7 +66,7 @@ pipeline {
                     try {
                         //bat ("gradle clean test -DRunner=\"${Runner}\" aggregate") //Ejecución en agente Windows con parametro jenkins
                         //sh ("gradle clean test -DRunner=\"${Runner}\" aggregate") //Ejecución en agente Linux con parametro jenkins
-                            bat("gradle clean test aggregate") //Ejecución en agente windows sin parametro jenkins
+                        bat("gradle clean test aggregate") //Ejecución en agente windows sin parametro jenkins
                         echo 'Test Ejecutados sin Fallo'
                         currentBuild.result = 'SUCCESS'
                     }
@@ -82,43 +79,30 @@ pipeline {
         }
 
         stage('Generar evidencia'){
-            steps
-                    {
-                        script
-                                {
-                                    try
-                                    {
-                                        bat  " rename \"${WORKSPACE}\\target\" serenity_${timestamp}"
-                                        echo 'Backup de evidencias realizado con exito'
-
-                                        publishHTML([
-                                                allowMissing: false,
-                                                alwaysLinkToLastBuild: true,
-                                                keepAll: true,
-                                                reportDir: "${WORKSPACE}//serenity_${timestamp}",
-                                                reportFiles: 'index.html',
-                                                reportName: 'Evidencias Automatizacion WEB POM',
-                                                reportTitles: 'Proyecto Base WEB POM'
-                                        ])
-                                        echo 'Reporte Html realizado con exito'
-                                    }
-                                    catch(e)
-                                    {
-                                        echo 'No se realizo el Backup de evidencias'
-                                        publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "${WORKSPACE}//target/serenity_${timestamp}", reportFiles: 'index.html', reportName: 'Evidencias Automatizacion WEB POM', reportTitles: 'Proyecto base WEB POM'])
-                                        echo 'Reporte Html realizado con exito'
-                                        currentBuild.result='SUCCESS'
-                                    }
-                                }
-                    }
-        }
-        stage('Exponer reporte cucumber'){
-                    steps{
-                        script{
-                            archiveArtifacts "**/cucumber.json"
-                            cucumber '**/cucumber.json'
-                        }
-                    }
+            steps{
+                 script{
+                     try{
+                          bat  " rename \"${WORKSPACE}\\target\" serenity_${timestamp}"
+                          echo 'Backup de evidencias realizado con exito'
+                          publishHTML([
+                                allowMissing: false,
+                                alwaysLinkToLastBuild: true,
+                                keepAll: true,
+                                reportDir: "${WORKSPACE}//serenity_${timestamp}",
+                                reportFiles: 'index.html',
+                                reportName: 'Evidencias Automatizacion WEB Screenplay',
+                                reportTitles: 'Proyecto Mobiletec Screenplay'
+                          ])
+                                echo 'Reporte Html realizado con exito'
+                          }
+                          catch(e){
+                                echo 'No se realizo el Backup de evidencias'
+                                publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "${WORKSPACE}//target/serenity_${timestamp}", reportFiles: 'index.html', reportName: 'Evidencias Automatizacion WEB Screenplay', reportTitles: 'Proyecto Mobiletec Screenplay'])
+                                echo 'Reporte Html realizado con exito'
+                                currentBuild.result='SUCCESS'
+                          }
+                 }
+            }
         }
         stage('Importar resultados en XRAY'){
             steps{
