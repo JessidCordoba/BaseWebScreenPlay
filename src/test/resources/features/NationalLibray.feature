@@ -21,4 +21,4 @@ Feature: Login
       And  he closes the session
       Examples:
       |Book|
-      |NIKOLA TESLA EL SENOR DEL MUNDO|
+      |NIKOLA TESLA EL SENOR DEL MUNDA|
