@@ -126,7 +126,7 @@ pipeline {
                     def titulo="${TITULO_ISSUE}"
                     def description = "${DESCRIPTION_ISSUE}"
                     def buildNumber="[BUILD_NUMBER|${BUILD_NUMBER}]"
-                    def labels = '["@Login","@PurchaseABook"]'
+                    def labels = "@Login,@PurchaseABook"
                     def environment = "Production"
                     def testExecutionFieldId = 10011
                     def typeEnvironmentField="customfield_10040"
@@ -146,11 +146,7 @@ pipeline {
                             },
                             "summary": "'''+titulo+''+buildNumber+'''",  
                             "description": "'''+description+'''",
-                            "labels":"'''+labels+'''",
-                            "''' + typeEnvironmentField + '''":
-                            {
-                                "''' + environment + '''"
-                            }    
+                            "labels":"'''+labels+'''"   
                         }
                     }'''
                     echo info
