@@ -148,7 +148,7 @@ pipeline {
                             "description": "'''+description+'''",
                             "''' + typeEnvironmentField + '''":
                             {
-                                ["''' + environment + '''"]
+                                "value": "''' + environment + '''"
                             } 
                         }
                     }'''
