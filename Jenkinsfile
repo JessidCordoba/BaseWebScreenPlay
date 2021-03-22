@@ -145,7 +145,7 @@ pipeline {
                                 "id": "''' + testExecutionFieldId + '''"
                             },
                             "summary": "'''+titulo+''+buildNumber+'''",  
-                            "description": "'''+description+'''",
+                            "description": "'''+description+'''"
                         }
                     }'''
                     echo info
