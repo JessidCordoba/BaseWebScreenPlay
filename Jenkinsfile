@@ -116,7 +116,7 @@ pipeline {
                     def testExecutionFieldId = 10011
                     def typeEnvironmentField="customfield_10040"
                     def projectKey = "XRAYJ"
-                    def xrayConnectorId = 'f0366223-b684-491f-bf0b-f43958eeb4aa'
+                    def xrayConnectorId = 'cd8de758-d627-4be8-a825-6710ffab489e'
                     def info =
                     '''{
                         "fields":
