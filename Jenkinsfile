@@ -93,7 +93,10 @@ pipeline {
                                 reportName: 'Evidencias Automatizacion WEB Screenplay',
                                 reportTitles: 'Proyecto Mobiletec Screenplay'
                           ])
-                                echo 'Reporte Html realizado con exito'
+                                echo 'Reporte Serenity realizado con exito'
+                                archiveArtifacts "**/cucumber.json"
+                                cucumber '**/cucumber.json'
+                                echo 'Reporte Cucumber realizado con exito'
                           }
                           catch(e){
                                 echo 'No se realizo el Backup de evidencias'
