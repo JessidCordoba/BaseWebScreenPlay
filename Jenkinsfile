@@ -128,7 +128,7 @@ pipeline {
                     def buildNumber="[BUILD_NUMBER|${BUILD_NUMBER}]"
                     def labels = '["regression","automated_regression"]'
                     def environment = "Production"
-                    def testExecutionFieldId = 10008
+                    def testExecutionFieldId = 10011
                     def typeEnvironmentField="customfield_10040"
                     def projectKey = "XRAYJ"
                     def xrayConnectorId = 'f0366223-b684-491f-bf0b-f43958eeb4aa'
