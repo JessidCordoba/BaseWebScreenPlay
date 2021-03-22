@@ -14,10 +14,13 @@ pipeline {
     stages {
         stage('Preparar Workspace')
                 {
-                    env.WORKSPACE_LOCAL = bat(returnStdout: true, script: 'pwd').trim()
-                    env.BUILD_TIME = bat(returnStdout: true, script: 'date +/F-/T').trim()
-                    echo "Workspace set to:" + env.WORKSPACE_LOCAL
-                    echo "Build time:" + env.BUILD_TIME
+                    steps
+                            {
+                                env.WORKSPACE_LOCAL = bat(returnStdout: true, script: 'pwd').trim()
+                                env.BUILD_TIME = bat(returnStdout: true, script: 'date +/F-/T').trim()
+                                echo "Workspace set to:" + env.WORKSPACE_LOCAL
+                                echo "Build time:" + env.BUILD_TIME
+                            }
                 }
         stage('Obtener Fuentes')
                 {
@@ -109,13 +112,17 @@ pipeline {
                                 }
                     }
         }
-        stage('Exponer reporte cucumber')
-                {
-                    archiveArtifacts "**/cucumber.json"
-                    cucumber '**/cucumber.json'
-                }
-        stage('Importar resultados en XRAY')
-                {
+        stage('Exponer reporte cucumber'){
+                    steps{
+                        script{
+                            archiveArtifacts "**/cucumber.json"
+                            cucumber '**/cucumber.json'
+                        }
+                    }
+        }
+        stage('Importar resultados en XRAY'){
+            steps{
+                script{
                     def titulo={TITULO_ISSUE}
                     def description = ${DESCRIPTION_ISSUE}
                     def buildNumber="[BUILD_NUMBER|${BUILD_NUMBER}]"
@@ -131,7 +138,7 @@ pipeline {
                         {
                             "project":
                             {
-                                "key": "''' + projectKey + '''"
+                                            "key": "''' + projectKey + '''"
                             },
                             "summary": "'''+titulo+''+buildNumber+'''",
                             "description": "'''+description+'''",
@@ -142,13 +149,15 @@ pipeline {
                             },
                             "''' + typeEnvironmentField + '''":
                             {
-                                "''' + environment + '''"
+                               "''' + environment + '''"
                             }
                         }
-				    }'''
+                    }'''
                     echo info
                     step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: 'target/cucumber-reports/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
                 }
+            }
+        }
         stage('Notificar') {
             steps {
                 script {
