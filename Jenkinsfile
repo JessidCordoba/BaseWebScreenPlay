@@ -154,7 +154,7 @@ pipeline {
                         }
                     }'''
                     echo info
-                    step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: 'serenity_${timestamp}/cucumber-reports/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+                    step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: "'serenity_${timestamp}/cucumber-reports/cucumber.json'", importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
                 }
             }
         }
