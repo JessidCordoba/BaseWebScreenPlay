@@ -139,12 +139,13 @@ pipeline {
                             "project":
                             {
                                "key": "''' + projectKey + '''"
-                            },
-                            "summary": "'''+titulo+''+buildNumber+'''",                            
+                            },                          
                             "issuetype":
                             {
                                 "id": "''' + testExecutionFieldId + '''"
-                            }
+                            },
+                            "summary": "'''+titulo+''+buildNumber+'''",  
+                            "description": "'''+description+'''",
                         }
                     }'''
                     echo info
