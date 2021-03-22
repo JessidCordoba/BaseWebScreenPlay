@@ -12,7 +12,7 @@ def credenciales="GithubJessid"
 pipeline {
     agent any
     stages {
-        stage('Preparar Workspace')
+        /*stage('Preparar Workspace')
                 {
                     steps
                             {
@@ -21,7 +21,7 @@ pipeline {
                                 echo "Workspace set to:" + $WORKSPACE_LOCAL
                                 echo "Build time:" + $BUILD_TIME
                             }
-                }
+                }*/
         stage('Obtener Fuentes')
                 {
                     steps
