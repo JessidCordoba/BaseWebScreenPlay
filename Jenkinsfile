@@ -111,7 +111,7 @@ pipeline {
                     def titulo="${TITULO_ISSUE}"
                     def description = "${DESCRIPTION_ISSUE}"
                     def buildNumber="[BUILD_NUMBER|${BUILD_NUMBER}]"
-                    def buildUser= "${BUILD_USER_ID}"
+                    def buildUser= env.BUILD_USER_ID
                     def labels = '["@Login","@PurchaseABook"]'
                     def environment = "QA"
                     def testExecutionFieldId = 10011
