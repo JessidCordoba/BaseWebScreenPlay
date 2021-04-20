@@ -144,6 +144,45 @@ pipeline {
                 }
             }
         }
+        stage('Creando Bug XRAY JIRA'){
+            steps{
+                script{
+                    def titulo="${SUMMARY_BUG}"
+                    def description = "${DESCRIPTION_BUG}"
+                    def buildNumber="[BUILD_NUMBER|${BUILD_NUMBER}]"
+                    def buildUser= env.BUILD_USER_ID
+                    def labels = '["@Error","@Bug"]'
+                    def environment = "QA"
+                    def bugFieldId = 10004
+                    def typeEnvironmentField="customfield_10040"
+                    def projectKey = "XRAYJ"
+                    def xrayConnectorId = 'cd8de758-d627-4be8-a825-6710ffab489e'
+                    def info =
+                            '''{
+                        "fields":
+                        {
+                            "project":
+                            {
+                               "key": "''' + projectKey + '''"
+                            },                          
+                            "issuetype":
+                            {
+                                "id": "''' + bugFieldId + '''"
+                            },
+                            "summary": "'''+titulo+''+buildNumber+''+buildUser+'''",  
+                            "description": "'''+description+'''",
+                            "labels": '''+labels+''', 
+                            "''' + typeEnvironmentField + '''":
+                            {
+                                "value": "''' + environment + '''"
+                            } 
+                        }
+                    }'''
+                    echo info
+                    step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+                }
+            }
+        }
         stage('Notificar') {
             steps {
                 script {
