@@ -147,8 +147,8 @@ pipeline {
         stage('Creando Bug XRAY JIRA'){
             steps{
                 script{
-                    def titulo="${SUMMARY_BUG}"
-                    def description = "${DESCRIPTION_BUG}"
+                    def titulo="Error"
+                    def description = "Error en el escenario "
                     def buildNumber="[BUILD_NUMBER|${BUILD_NUMBER}]"
                     def buildUser= env.BUILD_USER_ID
                     def labels = '["@Error","@Bug"]'
